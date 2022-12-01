@@ -1,0 +1,14 @@
+==47844== Memcheck, a memory error detector
+==47844== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==47844== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==47844== Command: ./testingDP_ALL_INST
+==47844== Parent PID: 47530
+==47844== 
+==47844== 
+==47844== HEAP SUMMARY:
+==47844==     in use at exit: 0 bytes in 0 blocks
+==47844==   total heap usage: 160,522 allocs, 160,522 frees, 211,946,996 bytes allocated
+==47844== 
+==47844== All heap blocks were freed -- no leaks are possible
+==47844== 
+==47844== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
