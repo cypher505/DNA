@@ -17,7 +17,7 @@ int main(){
     FILE* data_file1 = fopen("../DATA/Temps_DP_SOL1_ALL_INST.txt","w");
     FILE* data_file2 = fopen("../DATA/Temps_DP_SOL2_ALL_INST.txt","w");
     
-    while ( Files && (tmp_de_calcul < 100 )) {
+    while ( Files && (tmp_de_calcul < 20 )) {
         printf("\n______________________________________________\n\n");
 
         sprintf(buff,"../Instances_genome/%s",Files->Fname);

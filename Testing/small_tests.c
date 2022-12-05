@@ -18,8 +18,9 @@ int main(){
     printf("3 :Calculer le temps utilisé pour dist_naif \n");
     printf("4 :Calculer la distance d'un Inst par Dist1 :\n");
     printf("5 :Calculer la distance d'un Inst par Dist2 :\n");
-    printf("6 :Test SOL_1 et SOL_2 \n");
-    printf("7 :Tester le BONSU Q30\n");
+    printf("6 :Test SOL_1 :\n");
+    printf("7 :Test SOL_2 :\n");
+    printf("8 :Tester le BONSU Q30\n");
     scanf("%d",&buff);
     duo_chaine* duo;
     Align* res;
@@ -108,7 +109,7 @@ int main(){
         printf("Enter the Instance you want to test example (Inst_0000013_89.adn)\n");
         scanf("%s",string);
         
-        char bf[256]="Instances_genome/";
+        
         strcat(bf,string);
         
         duo = lire_genome(bf);
@@ -123,8 +124,15 @@ int main(){
         check_sanity(res,duo);
         printf("\nTemps de calcul PROG_DYN() pour  %s: %.2f \n",string,temp);
         printf("SOL_1 valide\n");
-        supprimer_alignement(res);
-        printf("______________________________________________________________________________\n");
+        supprimer_duo_chaine(duo);
+        supprimer_alignement(res);        
+        break;
+    case 7:
+        printf("______________________________________\n\n");
+        printf("Enter the Instance you want to test example (Inst_0000013_89.adn)\n");
+        scanf("%s",string);
+        strcat(bf,string);
+        duo = lire_genome(bf);
         temp_init = clock();
         res= PROG_DYN_SOL2(duo);
         temp_fin = clock();
@@ -137,9 +145,8 @@ int main(){
         printf("SOL_2 valide\n");
         supprimer_alignement(res);
         supprimer_duo_chaine(duo);
-
         break;
-    case 7:
+    case 8:
         printf("______________________________________\n\n");
         printf("pour L'INST_BONUS.adn dans le fichier Testing : \n");
         duo = lire_genome("Instances_genome/Inst_0000125_BO.adn");
@@ -149,6 +156,7 @@ int main(){
         printf("Le cout de l'Alignement BONUS = %d\n",coup_algn);
         int BONUS=(duo->n - duo->m)*C_DEL;
         printf("|x|*|y|*D_DEL = %d\n",BONUS);
+        supprimer_duo_chaine(duo);
         supprimer_alignement(res);
         assert(BONUS==coup_algn);
         printf("______________________________________\n\n");
@@ -161,6 +169,7 @@ int main(){
         printf("Le cout de l'Alignement BONUS = %d\n",coup_algn);
         BONUS=(duo->n - duo->m)*C_DEL;
         printf("|x|*|y|*D_DEL = %d\n",BONUS);
+        supprimer_duo_chaine(duo);
         supprimer_alignement(res);
         assert(BONUS==coup_algn);
         printf("______________________________________\n\n");
